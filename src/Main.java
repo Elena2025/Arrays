@@ -98,14 +98,16 @@ public class Main {
     public static void task6 () {
         System.out.println("Задача 6");
         int[] arr = generateRandomArray();
-        int minimum = 0;
+        int minimum = arr[0];
         int maximum = 0;
-        for (int index = 0; index < arr.length - 1; index++) {
-            if (arr[index] < arr[index + 1]) {
+        for (int index = 1; index < arr.length - 1; index++) {
+            System.out.println(arr[index]);
+            if (minimum > arr[index]) {
                 minimum = arr[index];
             }
         }
         for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
             if (maximum < arr[i]) {
                 maximum = arr[i];
             }
@@ -122,7 +124,7 @@ public class Main {
         for (int index = 0; index < arr.length; index++) {
             sum += arr[index];
         }
-        averageAmount = sum / arr.length;
+        averageAmount = sum / (double) arr.length;
         System.out.println("Средняя сумма трат за месяц составила " + averageAmount + " рублей.");
     }
 
